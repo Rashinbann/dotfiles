@@ -6,4 +6,4 @@ These are my dotfiles, I don't recommend using these as they are very bad.
 
 ![fastfetch](screenshots/fastfetch.png)
 ![neovim](screenshots/neovim.png)
-![wofi](wofi.png)
+![wofi](screenshots/wofi.png)

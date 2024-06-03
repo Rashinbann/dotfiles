@@ -1,5 +1,5 @@
 # Default config for sway
-
+#
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
@@ -27,8 +27,7 @@ set $browser firefox
 #
 set $wallpaper_path ~/Documents/backgrounds
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Documents/backgrounds/osakaos.jpg fill
-#exec_always swaybg -i $(find ~/Documents/backgrounds/ fill -type f | shuf -n1)
+output * bg ~/Documents/backgrounds/bob.png fill
 #
 # Example configuration:
 #
@@ -237,8 +236,7 @@ gaps inner 6
 # Clipboard
 exec wl-paste --watch cliphist store
 bindsym $mod+shift+v exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
-exec wl-paste --type image --watch cliphist store #Stores only image data
-exec usr/lib/ibus/ibus-ui-gtk3 --enable-wayland-im --exec-daemon --daemon-args "--xim --panel disable --replace"
 
-# Rounded corners
-corner_radius 20
+# te
+
+exec usr/lib/ibus/ibus-ui-gtk3 --enable-wayland-im --exec-daemon --daemon-args "--xim --panel disable --replace"

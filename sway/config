@@ -17,7 +17,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-terminal
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -27,7 +27,7 @@ set $browser firefox
 #
 set $wallpaper_path ~/Documents/backgrounds
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Documents/backgrounds/osakaos.jpg fill
+output * bg ~/Documents/backgrounds/pretty!.png fill
 #exec_always swaybg -i $(find ~/Documents/backgrounds/ fill -type f | shuf -n1)
 #
 # Example configuration:

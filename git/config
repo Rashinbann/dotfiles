@@ -1,11 +1,15 @@
 [alias]
   amend = commit --amend -C HEAD
 
-[url "git@github.com:"]
-  insteadOf = https://github.com/
-
 [core]
     editor = code --wait
 
 [push]
   autoSetupRemote = true
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

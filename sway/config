@@ -27,7 +27,7 @@ set $browser firefox
 #
 set $wallpaper_path ~/Documents/backgrounds
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Documents/backgrounds/pretty!.png fill
+output * bg ~/Documents/backgrounds/cozyspiritedaway.jpg fill
 #exec_always swaybg -i $(find ~/Documents/backgrounds/ fill -type f | shuf -n1)
 #
 # Example configuration:
@@ -239,3 +239,5 @@ exec wl-paste --watch cliphist store
 bindsym $mod+shift+v exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
 exec wl-paste --type image --watch cliphist store #Stores only image data
 exec usr/lib/ibus/ibus-ui-gtk3 --enable-wayland-im --exec-daemon --daemon-args "--xim --panel disable --replace"
+# Cursor fix
+seat seat0 xcursor_theme volantes_cursors 34

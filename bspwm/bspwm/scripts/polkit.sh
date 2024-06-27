@@ -1,0 +1,1 @@
+/nix/store/9zyhkqg61adlzrvg1sqsyk0gyxjlnj2d-home-manager-files/.config/bspwm/scripts/polkit.sh

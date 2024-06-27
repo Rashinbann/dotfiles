@@ -1,0 +1,54 @@
+#! /usr/bin/env bash
+
+SCRIPTS=~/.config/bspwm/scripts
+
+
+#* Config
+
+bspc monitor -d I II III IV V
+# bspc monitor DP-5 -d 1 2 3 4 5
+# bspc monitor HDMI-0 -d 6 7 8 9 10
+
+bspc config border_width        0
+bspc config window_gap          6
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config remove_unplugged_monitors true
+bspc config remove_disabled_monitors true
+bspc config merge_overlapping_monitors true
+
+#* Window rules
+# bspc rule -a *:*:Spotify desktop='^6'
+# bspc rule -a *:*:Vesktop desktop='^6'
+
+#* Autostart
+$SCRIPTS/start-once.sh sxhkd &
+$SCRIPTS/start-once.sh dex --autostart --environment bspwm &
+
+# xss-lock grabs a logind suspend inhibit lock and will use betterlockscreen to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+# --composite needed for behaving with compfy, I think
+$SCRIPTS/start-once.sh xss-lock --transfer-sleep-lock -- betterlockscreen -l blur -- --nofork --composite &
+
+$SCRIPTS/start-once.sh feh --fullscreen --no-menus --randomize --recursive --bg-fill ~/Documents/backgrounds/spacenixos.png 
+$SCRIPTS/start-once.sh ibus-daemon -drx
+$SCRIPTS/start-once.sh xmousepasteblock &
+$SCRIPTS/start-once.sh copyq &
+
+$SCRIPTS/bar-setup.sh &
+$SCRIPTS/polkit.sh &
+# $SCRIPTS/start-once.sh xplugd
+
+# This is needed because i3/bspwm don't activate systemd graphical-session.target
+# and so the systemd service can't be used for startup
+# See issue: https://github.com/i3/i3/issues/5186
+# $SCRIPTS/start-once.sh xsettingsd &
+
+
+# Startup (user-facing)
+# $SCRIPTS/start-once.sh vesktop --start-minimized
+
+ pgrep -f $SCRIPTS/monocle-fix.sh > /dev/null || $SCRIPTS/monocle-fix.sh &
